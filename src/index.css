@@ -9,3 +9,8 @@
   font-size: 16px;
   font-family: 'League Spartan', Avenir, Roboto !important;
 }
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 15vh;
+}

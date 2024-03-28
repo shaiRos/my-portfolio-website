@@ -5,8 +5,8 @@ export default function Header() {
                 <button className="text-4xl" style={{fontWeight: 500}}><span className="font-bold">Shaina</span> Rosell</button>
                 <div className="flex flex-row gap-20">
                     <button>Portfolio</button>
-                    <button>Resume</button>
                     <button>About</button>
+                    <button>Resume</button>
                     <button>Contact</button>
                 </div>
 

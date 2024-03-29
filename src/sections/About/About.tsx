@@ -1,7 +1,7 @@
 export default function About() {
 
     return (
-        <div className='snap-end bg-red-400 w-full h-[100vh] pt-40'>
+        <div className='snap-end bg-red-400 w-full pt-40 pb-16'>
 
             <div className="flex flex-col items-center justify-center w-full gap-3">
                 <h1 className="text-white text-4xl font-bold">ABOUT ME</h1>
@@ -18,11 +18,17 @@ export default function About() {
 
                 <div className="flex gap-12 max-w-[1200px] w-[80%] mt-16">
                     <div className="w-[50%]">
-                        <h1 className="text-white text-3xl font-bold mb-6">Get to Know me!</h1>
+                        <h1 className="text-white text-3xl font-bold mb-6">Get to know me!</h1>
                         <p className="text-white text-xl">
+                            Fueled by a love for design, art, and technology, I've found fulfillment as a programmer. This career embodies the perfect fusion of my passions, allowing me to weave creativity, innovation, and technical expertise into every project I undertake.
+                            <br></br>
+                            <br></br>
+                            My experience lies in developing web based applications for clients, working as a sole developer from crafting front-end experiences to architecting robust back-end solutions.
+                            I ventured into data analytics and big data, utilizing Tableau for data management and visualization. Additionally, I explored machine learning to uncover patterns and integrate learning models into my web applications.
+                            <br></br>
+                            <br></br>
+                            I am looking to gain experience, expand my connections and meet new people. Overall, I am most excited on being able to apply my creative ideas and technical skills I have learned into creating and advancing our technology!
 
-                            I'm a Frontend Focused Web Developer building and managing the Front-end of Websites and Web Applications that leads to the success of the overall product. Check out some of my work in the Projects section.
-                            I also like sharing content related to the stuff that I have learned over the years in Web Development so it can help other people of the Dev Community. Feel free to Connect or Follow me on my Linkedin and Instagram where I post useful content related to Web Development and Programming
                         </p>
                     </div>
                     <div className="w-[50%]">
@@ -50,6 +56,7 @@ export default function About() {
                             <TextPill>MongoDB</TextPill>
                             <TextPill>CouchDB</TextPill>
                             <TextPill>REST APIs</TextPill>
+                            <TextPill>Git</TextPill>
                             <TextPill>D3.js</TextPill>
                             <TextPill>Tailwind</TextPill>
                         </TextPillsContainer>

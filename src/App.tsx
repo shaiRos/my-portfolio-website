@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import Header from './components/Header/Header'
 import LandingIntro from './sections/LandingIntro/LandingIntro'
 import About from './sections/About/About'
+import Projects from './sections/Projects/Projects'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ function App() {
       <div className='snap-y snap-mandatory'>
         <ScrollSectionPane children={<LandingIntro />} />
         <ScrollSectionPane children={<About />} />
+        <ScrollSectionPane children={<Projects />} />
         {/* <div className='snap-end bg-red-400 w-full h-[100vh]'>
 
         </div> */}

@@ -15,9 +15,15 @@ export default function LandingIntro() {
                     <section className="text-xl">Lorem Ipsum is simply has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</section>
                     <button className="text-start text-xl font-semibold">CHECK OUT MY WORK</button>
                     <div className="flex flex-row gap-10 text-4xl ml-20 mt-6">
-                        <FontAwesomeIcon icon={faEnvelope} />
-                        <FontAwesomeIcon icon={faGithub} />
-                        <FontAwesomeIcon icon={faLinkedin} />
+                        <button>
+                            <FontAwesomeIcon icon={faEnvelope} />
+                        </button>
+                        <button>
+                            <FontAwesomeIcon icon={faGithub} />
+                        </button>
+                        <button>
+                            <FontAwesomeIcon icon={faLinkedin} />
+                        </button>
                     </div>
                 </div>
                 <div>

@@ -60,7 +60,7 @@ export default function About() {
                             <TextPill>D3.js</TextPill>
                             <TextPill>Tailwind</TextPill>
                         </TextPillsContainer>
-                        <h3 className="text-xl text-white">Other Software Skills</h3>
+                        <h3 className="text-xl text-white">Tools & Platforms</h3>
                         <TextPillsContainer>
                             <TextPill>Tableau Products</TextPill>
                             <TextPill>ArcGIS Products</TextPill>
@@ -87,8 +87,8 @@ function TextPillsContainer({ children }) {
 
 function TextPill({ children }) {
     return (
-        <text className="bg-white rounded-3xl px-4 py-1">
+        <div className="bg-white rounded-3xl px-4 py-1 flex">
             {children}
-        </text>
+        </div>
     )
 }

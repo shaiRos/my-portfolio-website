@@ -5,6 +5,7 @@ import Header from './components/Header/Header'
 import LandingIntro from './sections/LandingIntro/LandingIntro'
 import About from './sections/About/About'
 import Projects from './sections/Projects/Projects'
+import Contact from './sections/Contact/Contact'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
         <ScrollSectionPane children={<LandingIntro />} />
         <ScrollSectionPane children={<About />} />
         <ScrollSectionPane children={<Projects />} />
+        <ScrollSectionPane children={<Contact />} />
         {/* <div className='snap-end bg-red-400 w-full h-[100vh]'>
 
         </div> */}

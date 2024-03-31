@@ -18,3 +18,7 @@ html {
 h1 {
   font-size: xx-large;
 }
+
+body {
+  /* background-image: url('./assets/AboutBG.png'); */
+}

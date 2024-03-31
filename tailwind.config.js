@@ -16,7 +16,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        ...colors
+        ...colors,
+        main: colors.red[400],
+        // main: "#7A2F3C",
+        main_dark: "#EF4444"
       },
     },
   },

@@ -1,7 +1,9 @@
+import { TextPill, TextPillsContainer } from "../../components/TextPills";
+
 export default function About() {
 
     return (
-        <div className='snap-end bg-red-400 w-full pt-40 pb-16'>
+        <div className='snap-end bg-main w-full pt-40 pb-16'>
 
             <div className="flex flex-col items-center justify-center w-full gap-3">
                 <h1 className="text-white text-4xl font-bold">ABOUT ME</h1>
@@ -13,7 +15,7 @@ export default function About() {
 
                 <p className="text-white text-xl max-w-[1000px] text-center mt-10">
                     Some Information about me, my experience, what I do, and all my applicable skills relating to programming and tech.
-                    Head to my Projects section which showcases all these skills being applied to the real world!
+                    Head to my Portfolio section which showcases all these skills being applied to real world projects!
                 </p>
 
                 <div className="flex gap-12 max-w-[1200px] w-[80%] mt-16">
@@ -76,19 +78,3 @@ export default function About() {
     )
 }
 
-function TextPillsContainer({ children }) {
-    return (
-        <div className="flex flex-wrap gap-2 my-4">
-            {children}
-        </div>
-    )
-}
-
-
-function TextPill({ children }) {
-    return (
-        <div className="bg-white rounded-3xl px-4 py-1 flex">
-            {children}
-        </div>
-    )
-}

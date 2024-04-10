@@ -9,7 +9,7 @@ export function TextPillsContainer({ children }) {
 
 export function TextPill({ children }) {
     return (
-        <div className="bg-white rounded-3xl px-4 py-0.5 flex text-md">
+        <div className="bg-white rounded-3xl px-4 py-0.5 pt-1 flex text-md">
             {children}
         </div>
     )

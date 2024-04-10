@@ -8,7 +8,8 @@ export const toronto_portlands : Project_Entry = {
         "Express",
         "REST APIs",
         "Prototyping"
-    ]
+    ],
+    modal_content: <ModalContent />
 }
 
 function Description() {
@@ -18,6 +19,16 @@ function Description() {
              "A New River Innovation Challenge" by WATERFRONToronto.
             </a> A prototype web platform to share ecological and environmental data gathered at the new river mouth on the Port Lands site in Toronto. 
         </>
+    )
+}
+
+function ModalContent() {
+    return (
+        <div>
+            <h1>
+                Toronto Portlands
+            </h1>
+        </div>
     )
 }
 

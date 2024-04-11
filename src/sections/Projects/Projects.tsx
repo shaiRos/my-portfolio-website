@@ -32,14 +32,23 @@ export default function Projects({setDisplayModal, setModalContent} : {setDispla
                 </div> */}
                 <div className="flex max-w-[1200px] w-[80%] gap-5">
                     <div className="w-[50%] flex flex-col gap-5">
-                        <ProjectCard project_entry={ProjectsConfig[0]} setDisplayModal={setDisplayModal} setModalContent={setModalContent} />  
-                        <ProjectCard/>
-                        <ProjectCard h={500}/>
+                        {
+                            ProjectsConfig.map((p,index) => {
+                                if (index % 2) return <></>
+                                return <ProjectCard project_entry={p} setDisplayModal={setDisplayModal} setModalContent={setModalContent} />  
+                            })
+                        }
                     </div>
                     <div className="w-[50%] flex flex-col gap-5">
-                        <ProjectCard />
+                        {
+                            ProjectsConfig.map((p,index) => {
+                                if (!(index % 2)) return <></>
+                                return <ProjectCard project_entry={p} setDisplayModal={setDisplayModal} setModalContent={setModalContent} />  
+                            })
+                        }
+                        {/* <ProjectCard />
                         <ProjectCard h={300} />
-                        <ProjectCard h={400}/>
+                        <ProjectCard h={400}/> */}
 
                     </div>
 

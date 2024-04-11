@@ -9,15 +9,24 @@ export const toronto_portlands : Project_Entry = {
         "REST APIs",
         "Prototyping"
     ],
-    modal_content: <ModalContent />
+    modal_content: <ModalContent />,
+    links: [
+        {
+            label: "A New River Innovation Challenge",
+            url: "https://portlandsto.ca/a-new-river-innovation-challenge/"
+        },
+        {
+            label: "Story Sense App",
+            url: "https://engage.o2design.com/TorontoPortlands/app/"
+        }
+    ]
 }
 
 function Description() {
     return (
         <>
-            Winning submission for the <a href="https://portlandsto.ca/a-new-river-innovation-challenge/" target="_blank">
-             "A New River Innovation Challenge" by WATERFRONToronto.
-            </a> A prototype web platform to share ecological and environmental data gathered at the new river mouth on the Port Lands site in Toronto. 
+            Winning submission for the
+             "A New River Innovation Challenge" by WATERFRONToronto. A prototype web platform to share ecological and environmental data gathered at the new river mouth on the Port Lands site in Toronto. 
         </>
     )
 }

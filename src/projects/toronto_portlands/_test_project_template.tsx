@@ -8,7 +8,13 @@ export const test_project : Project_Entry = {
         
     ],
     // this is optional, you can omit this
-    modal_content: <ModalContent />
+    modal_content: <ModalContent />,
+    links: [
+        {
+            label: "Story Sense App",
+            url: "https://yamagata-developers-society.github.io/blog/react-hooks-slide-in-modal/"
+        }
+    ]
 }
 
 function Description() {

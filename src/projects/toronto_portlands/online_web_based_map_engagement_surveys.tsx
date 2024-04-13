@@ -1,19 +1,26 @@
 import { useState } from "react";
 import { Project_Entry } from "../../utils/types"
 
-export const o2_engagement_data_analysis_app: Project_Entry = {
-    Project_Name: "Internal Web Application for Engagement Data Analysis and Coding",
+export const online_web_based_map_engagement_surveys : Project_Entry = {
+    Project_Name: "Online Web Based Maps & Surveys for Public Engagement",
     card_description: <Description />,
     card_tags: [
-        'MERN Stack',
-        'React Query',
-        'REST APIs',
-        'Database Management',
-        'Machine Learning',
+        'React',
+        'CouchDB',
+        'SurveyJS',
+        'LeafletJS'
+        
     ],
     // this is optional, you can omit this
-    // modal_content: <ModalContent />
+    // modal_content: <ModalContent />,
+    links: [
+        {
+            label: "Bikeshare Toronto | Community Engagement",
+            url: "https://engagebikeshareto.com/"
+        },
+    ]
 }
+
 
 function Description() {
     const shorten = true
@@ -24,16 +31,14 @@ function Description() {
     };
 
     const descriptionHTMLFull = <>
-        Internal Web based application for handling open-ended comments collected through engagement surveys.
-        This tool effectively process and categorize the responses from these surveys,
-        integrating some machine learning techniques to streamline the process of categorizing data by providing automated suggestions for tags,
-        and enabling planners to create insightful reports based on the results of both quantitative data and coded comments.
-    </>
+    Web-based surveys utilizing ArcGIS maps, enabling users to add features such as points, polygons, and polylines, along with leaving comments and classifying them.             
+    These were primarily used in parallel with in person engagement to gather public feedback on area amenities, with clients including Mississauga, Kelowna, Grimsby, Toronto, etc.
+    Below are example links of public online engagement that are currently ongoing.
+</>
     const descriptionHTMLShort = <>
-        Internal Web based application for handling open-ended comments collected through engagement surveys.
-        This tool effectively process and categorize the responses from these surveys,
-        integrating some machine learning
-    </>
+    Web-based surveys utilizing ArcGIS maps, enabling users to add features such as points, polygons, and polylines, along with leaving comments and classifying them.             
+    These were primarily used in parallel with in person engagement
+</>
 
 
     if (!shorten) return descriptionHTMLFull

@@ -3,6 +3,7 @@ import { TextPill, TextPillsContainer } from "../../components/TextPills"
 import { ProjectsConfig } from "../../projects/Projects"
 import { Project_Entry } from "../../utils/types"
 import { faLink } from "@fortawesome/free-solid-svg-icons"
+import { useState } from "react"
 
 export default function Projects({ setDisplayModal, setModalContent }: { setDisplayModal: () => void, setModalContent: any }) {
 
@@ -91,8 +92,8 @@ function ProjectCard({ h, children, project_entry, setDisplayModal, setModalCont
 
             <div>
                 <h2 className="font-bold text-xl mb-2 group-hover:text-main">{project_entry?.Project_Name}</h2>
-                <p>{project_entry?.card_description}</p>
-                {project_entry?.modal_content && <button onClick={toggleModal} className="text-main_dark">More Info +</button>}
+                <div>{project_entry?.card_description}</div>
+                {/* {project_entry?.modal_content && <button onClick={toggleModal} className="text-main_dark">More Info +</button>} */}
 
                 {
                     project_entry?.links?.length &&
@@ -100,7 +101,7 @@ function ProjectCard({ h, children, project_entry, setDisplayModal, setModalCont
                         {
                             project_entry?.links?.map((link: link) => {
 
-                                return <a href={link.url} target="_blank" className="hover:text-main_dark whitespace-nowrap mr-2">
+                                return <a key={link.label} href={link.url} target="_blank" className="hover:text-main_dark whitespace-nowrap mr-2">
                                     <FontAwesomeIcon icon={faLink} size="xs" className="mr-1"/>
                                     {link.label}
                                 </a>
@@ -113,7 +114,7 @@ function ProjectCard({ h, children, project_entry, setDisplayModal, setModalCont
                 <TextPillsContainer>
                     {
                         project_entry?.card_tags.map((tag) =>
-                            <TextPill key={tag}>{tag}</TextPill>
+                            <TextPill key={project_entry.Project_Name + tag}>{tag}</TextPill>
                         )
                     }
                 </TextPillsContainer>

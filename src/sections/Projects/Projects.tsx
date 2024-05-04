@@ -37,16 +37,16 @@ export default function Projects({ setDisplayModal, setModalContent }: { setDisp
                     <div className="w-[50%] flex flex-col gap-5">
                         {
                             ProjectsConfig.map((p, index) => {
-                                if (index % 2) return <></>
-                                return <ProjectCard key={p.Project_Name} project_entry={p} setDisplayModal={setDisplayModal} setModalContent={setModalContent} />
+                                if (index % 2) return null
+                                return <ProjectCard key={p.Project_Name+index} project_entry={p} setDisplayModal={setDisplayModal} setModalContent={setModalContent} />
                             })
                         }
                     </div>
                     <div className="w-[50%] flex flex-col gap-5">
                         {
                             ProjectsConfig.map((p, index) => {
-                                if (!(index % 2)) return <></>
-                                return <ProjectCard key={p.Project_Name} project_entry={p} setDisplayModal={setDisplayModal} setModalContent={setModalContent} />
+                                if (!(index % 2)) return null
+                                return <ProjectCard key={p.Project_Name+index} project_entry={p} setDisplayModal={setDisplayModal} setModalContent={setModalContent} />
                             })
                         }
                         {/* <ProjectCard />
@@ -54,7 +54,6 @@ export default function Projects({ setDisplayModal, setModalContent }: { setDisp
                         <ProjectCard h={400}/> */}
 
                     </div>
-
                 </div>
             </div>
         </div>
@@ -95,8 +94,8 @@ function ProjectCard({ h, children, project_entry, setDisplayModal, setModalCont
                     <div className="overflow-hidden h-full flex flex-col justify-center gap-2">
                         {
                             Array.isArray(project_entry.card_image) ?
-                            project_entry.card_image.map(img => {
-                                return <img src={img}/>
+                            project_entry.card_image.map((img,i) => {
+                                return <img key={project_entry.Project_Name + "img-"+i} src={img}/>
                             })
                             :
                             <img src={project_entry.card_image}/>

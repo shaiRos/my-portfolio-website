@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { JSXElementConstructor, useEffect, useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Header from './components/Header/Header'
@@ -10,6 +10,15 @@ import Contact from './sections/Contact/Contact'
 function App() {
   const [displayModal, setDisplayModal] = useState(false);
   const [modalContent,setModalContent] = useState(<></>)
+  const projectsRef = useRef()
+  const aboutRef = useRef()
+  const contactRef = useRef()
+
+  const scrollRefs = {
+    projectsRef: projectsRef,
+    aboutRef: aboutRef,
+    contactRef: contactRef
+  }
 
   useEffect(() => {
     if (displayModal) {
@@ -22,12 +31,12 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Header scrollRefs={scrollRefs} />
       <div className='snap-y snap-mandatory'>
-        <ScrollSectionPane children={<LandingIntro />} />
-        <ScrollSectionPane children={<About />} />
-        <ScrollSectionPane children={<Projects setDisplayModal={setDisplayModal} setModalContent={setModalContent}/>} />
-        <ScrollSectionPane children={<Contact />} />
+        <ScrollSectionPane reff={projectsRef} children={<LandingIntro scrollRefs={scrollRefs} />} />
+        <ScrollSectionPane reff={aboutRef} children={<About />} />
+        <ScrollSectionPane reff={projectsRef} children={<Projects setDisplayModal={setDisplayModal} setModalContent={setModalContent}/>} />
+        <ScrollSectionPane reff={contactRef} children={<Contact />} />
 
 
       </div>
@@ -48,9 +57,9 @@ function App() {
 
 
 
-function ScrollSectionPane({ children }) {
+function ScrollSectionPane({ children,reff } : {children: any,reff?: any}) {
   return (
-    <div className='snap-start'>
+    <div className='snap-start' ref={reff}>
       {children}
     </div>
   )

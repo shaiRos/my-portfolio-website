@@ -32,7 +32,7 @@ function Description() {
     };
 
     const descriptionHTMLFull = <>
-        A data story on "the top 2000 songs of Spotify" dataset from kaggle. Created as my final project for a data analysis course in uni.
+        A data story on "the top 2000 songs of Spotify" dataset from kaggle. Created as my final project for a data analysis course in University of Calgary.
     </>
     const descriptionHTMLShort = <>
     </>

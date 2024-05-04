@@ -86,9 +86,25 @@ function ProjectCard({ h, children, project_entry, setDisplayModal, setModalCont
         >
 
             {/* {children} */}
-            <div className="min-w-[200px] h-full bg-slate-400">
+            {
+                project_entry.card_image ?
+            <div className="max-w-[200px] min-w-[200px] h-full p-4 rounded-sm" style={{backgroundColor:'rgb(255,255,255,0.1)'}}>
                 {/* picture here */}
-            </div>
+                {
+                    project_entry?.card_image && 
+                    <div className="overflow-hidden h-full flex flex-col justify-center gap-2">
+                        {
+                            Array.isArray(project_entry.card_image) ?
+                            project_entry.card_image.map(img => {
+                                return <img src={img}/>
+                            })
+                            :
+                            <img src={project_entry.card_image}/>
+                        }
+                    </div>
+                }
+            </div> : <> </>
+            }
 
             <div>
                 <h2 className="font-bold text-xl mb-2 group-hover:text-main">{project_entry?.Project_Name}</h2>

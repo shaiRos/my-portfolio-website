@@ -1,4 +1,5 @@
 import { Project_Entry } from "../../utils/types"
+import coverImage from './to-portlands-cover.png'
 
 export const toronto_portlands : Project_Entry = {
     Project_Name: "Story Stream App",
@@ -19,14 +20,15 @@ export const toronto_portlands : Project_Entry = {
             label: "Portlands StoryStream",
             url: "https://engage.o2design.com/TorontoPortlands/app/"
         }
-    ]
+    ],
+    card_image: coverImage
 }
 
 function Description() {
     return (
         <>
             Winning submission for the
-             "A New River Innovation Challenge" by WATERFRONToronto. Designed for Waterfront Toronto, O2's Port Lands Story Stream (formerly named 'Story Sense') is an online platform that usees real-time data and collective storytelling to foster connections between visitors and emerging ecosystems at the new mouth of the Don River.
+             "A New River Innovation Challenge" by WATERFRONToronto. Designed for Waterfront Toronto, O2's Port Lands Story Stream (formerly named 'Story Sense') is an online platform that uses real-time data and collective storytelling to foster connections between visitors and emerging ecosystems at the new mouth of the Don River.
         </>
     )
 }

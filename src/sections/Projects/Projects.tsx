@@ -21,7 +21,7 @@ export default function Projects({ setDisplayModal, setModalContent }: { setDisp
                 <p className="text-xl max-w-[1000px] text-center my-3">
                     A blend of client projects within the job industry and academic endeavors
                 </p>
-                <div className="flex flex-col xl:flex-row max-w-[1200px] w-[80%] gap-5">
+                <div className="flex flex-col xl:flex-row max-w-[1200px] w-[95%] md:w-[80%] gap-5">
                     <div className="min-w-[50%] flex flex-col gap-5">
                         {
                             ProjectsConfig.map((p, index) => {

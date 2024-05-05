@@ -3,7 +3,7 @@ import { TextPill, TextPillsContainer } from "../../components/TextPills";
 export default function About() {
 
     return (
-        <div className='snap-end bg-main w-full pt-40 pb-16 px-5 lg:px-0'>
+        <div className='snap-end bg-main w-full pt-40 pb-16 px-2 lg:px-0'>
 
             <div className="flex flex-col items-center justify-center w-full gap-3">
                 <h1 className="text-white text-4xl font-bold">ABOUT ME</h1>
@@ -18,7 +18,7 @@ export default function About() {
                     Head to my Portfolio section which showcases all these skills being applied to real world projects!
                 </p>
 
-                <div className="flex flex-col md:flex-row gap-12 max-w-[1200px] w-[80%] mt-16">
+                <div className="flex flex-col md:flex-row gap-12 max-w-[1200px] px-2 md:px-0 md:w-[80%] mt-16">
                     <div className="">
                         <h1 className="text-white text-3xl font-bold mb-6">Get to know me!</h1>
                         <p className="text-white text-xl">

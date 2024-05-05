@@ -21,20 +21,8 @@ export default function Projects({ setDisplayModal, setModalContent }: { setDisp
                 <p className="text-xl max-w-[1000px] text-center my-3">
                     A blend of client projects within the job industry and academic endeavors
                 </p>
-                {/* <div className="flex flex-wrap justify-center gap-8 max-w-[1200px] w-[80%]">
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
-                </div> */}
-                <div className="flex max-w-[1200px] w-[80%] gap-5">
-                    <div className="w-[50%] flex flex-col gap-5">
+                <div className="flex flex-col xl:flex-row max-w-[1200px] w-[80%] gap-5">
+                    <div className="min-w-[50%] flex flex-col gap-5">
                         {
                             ProjectsConfig.map((p, index) => {
                                 if (index % 2) return null
@@ -42,16 +30,13 @@ export default function Projects({ setDisplayModal, setModalContent }: { setDisp
                             })
                         }
                     </div>
-                    <div className="w-[50%] flex flex-col gap-5">
+                    <div className="flex flex-col gap-5">
                         {
                             ProjectsConfig.map((p, index) => {
                                 if (!(index % 2)) return null
                                 return <ProjectCard key={p.Project_Name+index} project_entry={p} setDisplayModal={setDisplayModal} setModalContent={setModalContent} />
                             })
                         }
-                        {/* <ProjectCard />
-                        <ProjectCard h={300} />
-                        <ProjectCard h={400}/> */}
 
                     </div>
                 </div>
@@ -76,7 +61,7 @@ function ProjectCard({ h, children, project_entry, setDisplayModal, setModalCont
 
     return (
         <div
-            className="w-full bg-[#E2D2D2] rounded-lg flex gap-3 p-4 hover:shadow-xl duration-300 group"
+            className="w-full bg-[#E2D2D2] rounded-lg flex flex-col sm:flex-row gap-3 p-4 hover:shadow-xl duration-300 group"
             style={{
                 border: 'white solid 1px',
                 minHeight: 200,
@@ -87,18 +72,18 @@ function ProjectCard({ h, children, project_entry, setDisplayModal, setModalCont
             {/* {children} */}
             {
                 project_entry.card_image ?
-            <div className="max-w-[200px] min-w-[200px] h-full p-4 rounded-sm" style={{backgroundColor:'rgb(255,255,255,0.1)'}}>
+            <div className="md:max-w-[200px] md:min-w-[200px] h-full p-4 rounded-sm" style={{backgroundColor:'rgb(255,255,255,0.1)'}}>
                 {/* picture here */}
                 {
                     project_entry?.card_image && 
-                    <div className="overflow-hidden h-full flex flex-col justify-center gap-2">
+                    <div className="overflow-hidden h-full flex flex-col justify-center gap-2 max-h-[400px]">
                         {
                             Array.isArray(project_entry.card_image) ?
                             project_entry.card_image.map((img,i) => {
-                                return <img key={project_entry.Project_Name + "img-"+i} src={img}/>
+                                return <img className="object-fit" key={project_entry.Project_Name + "img-"+i} src={img}/>
                             })
                             :
-                            <img src={project_entry.card_image}/>
+                            <img className="object-contain" src={project_entry.card_image}/>
                         }
                     </div>
                 }

@@ -7,10 +7,10 @@ export default function LandingIntro({scrollRefs}) {
     const scrollToRef = (myRef) => window.scrollTo(0, myRef.current.offsetTop - 5);
 
     return (
-        <div className="flex justify-center md:mt-40 my-16 md:h-[50vh]">
+        <div className="flex justify-center md:mt-40 md:my-16 md:h-[50vh]">
             <div className="h-[800px] md:h-[600px] w-[800px] hidden md:block" style={{ backgroundColor: "#ECE7E1" }}>
             </div>
-            <div className="md:absolute h-[600px] md:flex gap-24 items-center">
+            <div className="md:absolute h-[600px] md:flex gap-24 items-center p-8">
                 <div className="flex flex-col gap-8 max-w-[500px]">
                     <label className="text-5xl font-bold">Full Stack Software Developer</label>
                     <section className="text-xl">

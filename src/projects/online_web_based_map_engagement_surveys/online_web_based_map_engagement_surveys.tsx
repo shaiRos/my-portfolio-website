@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Project_Entry } from "../../utils/types"
+import card_image from './bikesharetoronto_2025_engagement_site.png'
 
 export const online_web_based_map_engagement_surveys : Project_Entry = {
     Project_Name: "Online Web Based Maps & Surveys for Public Engagement",
@@ -18,7 +19,8 @@ export const online_web_based_map_engagement_surveys : Project_Entry = {
             label: "Bikeshare Toronto | Community Engagement",
             url: "https://engagebikeshareto.com/"
         },
-    ]
+    ],
+    card_image: card_image
 }
 
 

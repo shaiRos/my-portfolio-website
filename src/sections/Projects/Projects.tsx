@@ -96,7 +96,7 @@ function ProjectCard({ h, children, project_entry, setDisplayModal, setModalCont
                 {/* {project_entry?.modal_content && <button onClick={toggleModal} className="text-main_dark">More Info +</button>} */}
 
                 {
-                    project_entry?.links?.length &&
+                    project_entry?.links?.length ?
                     <div className="mt-3">
                         {
                             project_entry?.links?.map((link: link) => {
@@ -107,7 +107,7 @@ function ProjectCard({ h, children, project_entry, setDisplayModal, setModalCont
                                 </a>
                             })
                         }
-                    </div>
+                    </div> : null
                 }
 
 

@@ -3,7 +3,7 @@ import { TextPill, TextPillsContainer } from "../../components/TextPills"
 import { ProjectsConfig } from "../../projects/Projects"
 import { Project_Entry } from "../../utils/types"
 import { faLink } from "@fortawesome/free-solid-svg-icons"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Projects({ setDisplayModal, setModalContent }: { setDisplayModal: () => void, setModalContent: any }) {
 
@@ -46,6 +46,17 @@ export default function Projects({ setDisplayModal, setModalContent }: { setDisp
 }
 
 function ProjectCard({ h, children, project_entry, setDisplayModal, setModalContent }: { h?: number, children?: HTMLElement, project_entry?: Project_Entry, setDisplayModal?: () => void, setModalContent: any }) {
+    const [isLandscape, setIsLandscape] = useState<boolean | null>(null);
+
+    useEffect(() => {
+        if (project_entry?.card_image && typeof project_entry.card_image === "string") {
+            const img = new Image();
+            img.onload = () => {
+                setIsLandscape(img.width > img.height);
+            };
+            img.src = project_entry.card_image;
+        }
+    }, [project_entry?.card_image]);
 
     const toggleModal = () => {
         if (!project_entry?.modal_content) return
@@ -61,63 +72,71 @@ function ProjectCard({ h, children, project_entry, setDisplayModal, setModalCont
 
     return (
         <div
-            className="w-full bg-[#E2D2D2] rounded-lg flex flex-col sm:flex-row gap-3 p-4 hover:shadow-xl duration-300 group"
+            className={`w-full bg-[#E2D2D2] rounded-lg flex ${
+                isLandscape === null
+                ? '' // Default class while loading
+                : isLandscape
+                ? 'flex-col'
+                : 'sm:flex-row'
+            } gap-3 p-4 hover:shadow-xl duration-300 group`}
             style={{
-                border: 'white solid 1px',
-                minHeight: 200,
-                height: h
+            border: 'white solid 1px',
+            minHeight: 200,
+            height: h
             }}
         >
 
             {/* {children} */}
             {
-                project_entry.card_image ?
-            <div className="md:max-w-[200px] md:min-w-[200px] h-full p-4 rounded-sm" style={{backgroundColor:'rgb(255,255,255,0.1)'}}>
-                {/* picture here */}
+            project_entry.card_image ?
+            <div className={`${
+                isLandscape ? 'w-full max-h-[200px] mb-4 xl:mb-0' : 'md:max-w-[200px] md:min-w-[200px] h-full'
+            } p-4 rounded-sm`} style={{backgroundColor:'rgb(255,255,255,0.1)'}}>
+            {/* picture here */}
+            {
+                project_entry?.card_image && 
+                <div className={`overflow-hidden h-full flex flex-col justify-center gap-2 ${isLandscape ? 'max-h-[200px]' : 'max-h-[400px]'} `}>
                 {
-                    project_entry?.card_image && 
-                    <div className="overflow-hidden h-full flex flex-col justify-center gap-2 max-h-[400px]">
-                        {
-                            Array.isArray(project_entry.card_image) ?
-                            project_entry.card_image.map((img,i) => {
-                                return <img className="object-fit" key={project_entry.Project_Name + "img-"+i} src={img}/>
-                            })
-                            :
-                            <img className="object-contain" src={project_entry.card_image}/>
-                        }
-                    </div>
+                    Array.isArray(project_entry.card_image) ?
+                    project_entry.card_image.map((img,i) => {
+                    return <img className="object-fit" key={project_entry.Project_Name + "img-"+i} src={img}/>
+                    })
+                    :
+                    <img className="object-contain object-top h-full w-full" src={project_entry.card_image}/>
                 }
+                </div>
+            }
             </div> : <> </>
             }
 
             <div>
-                <h2 className="font-bold text-xl mb-2 group-hover:text-main">{project_entry?.Project_Name}</h2>
-                <div>{project_entry?.card_description}</div>
-                {/* {project_entry?.modal_content && <button onClick={toggleModal} className="text-main_dark">More Info +</button>} */}
+            <h2 className="font-bold text-xl mb-2 group-hover:text-main">{project_entry?.Project_Name}</h2>
+            <div>{project_entry?.card_description}</div>
+            {/* {project_entry?.modal_content && <button onClick={toggleModal} className="text-main_dark">More Info +</button>} */}
 
+            {
+                project_entry?.links?.length ?
+                <div className="mt-3">
                 {
-                    project_entry?.links?.length ?
-                    <div className="mt-3">
-                        {
-                            project_entry?.links?.map((link: link) => {
+                    project_entry?.links?.map((link: link) => {
 
-                                return <a key={link.label} href={link.url} target="_blank" className="hover:text-main_dark whitespace-nowrap mr-2">
-                                    <FontAwesomeIcon icon={faLink} size="xs" className="mr-1"/>
-                                    {link.label}
-                                </a>
-                            })
-                        }
-                    </div> : null
+                    return <a key={link.label} href={link.url} target="_blank" className="hover:text-main_dark whitespace-nowrap mr-2">
+                        <FontAwesomeIcon icon={faLink} size="xs" className="mr-1"/>
+                        {link.label}
+                    </a>
+                    })
                 }
+                </div> : null
+            }
 
 
-                <TextPillsContainer>
-                    {
-                        project_entry?.card_tags.map((tag) =>
-                            <TextPill key={project_entry.Project_Name + tag}>{tag}</TextPill>
-                        )
-                    }
-                </TextPillsContainer>
+            <TextPillsContainer>
+                {
+                project_entry?.card_tags.map((tag) =>
+                    <TextPill key={project_entry.Project_Name + tag}>{tag}</TextPill>
+                )
+                }
+            </TextPillsContainer>
             </div>
 
 

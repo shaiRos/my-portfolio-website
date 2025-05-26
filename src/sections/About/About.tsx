@@ -52,22 +52,31 @@ export default function About() {
                             <TextPill>HTML/CSS</TextPill>
                             <TextPill>Node.js</TextPill>
                             <TextPill>React.js</TextPill>
+                            <TextPill>Tailwind.css</TextPill>
+                            <TextPill>TanStack Query</TextPill>
                             <TextPill>TypeScript</TextPill>
                             <TextPill>MERN Stack</TextPill>
-                            <TextPill>jQuery</TextPill>
                             <TextPill>MongoDB</TextPill>
                             <TextPill>CouchDB</TextPill>
-                            <TextPill>REST APIs</TextPill>
+                            <TextPill>REST API</TextPill>
                             <TextPill>Git</TextPill>
-                            <TextPill>D3.js</TextPill>
-                            <TextPill>Tailwind</TextPill>
+                            <TextPill>d3.js</TextPill>
+                            <TextPill>jQuery</TextPill>
+                            <TextPill>SQL</TextPill>
+                            <TextPill>Python</TextPill>
+                            <TextPill>ArcPy</TextPill>
+                            <TextPill>Java</TextPill>
+                            <TextPill>C++</TextPill>
                         </TextPillsContainer>
                         <h3 className="text-xl text-white">Tools & Platforms</h3>
                         <TextPillsContainer>
-                            <TextPill>Tableau Products</TextPill>
+                            <TextPill>Tableau Desktop</TextPill>
+                            <TextPill>Tableau Prep</TextPill>
                             <TextPill>ArcGIS Products</TextPill>
+                            <TextPill>ArcGIS Maps SDK for JavaScript</TextPill>
                             <TextPill>Google BigQuery</TextPill>
                             <TextPill>Figma</TextPill>
+                            <TextPill>AWS Athena</TextPill>
                         </TextPillsContainer>
                     </div>
 

@@ -32,7 +32,8 @@ function App() {
   return (
     <div>
       <Header scrollRefs={scrollRefs} />
-      <div className='snap-y snap-mandatory'>
+      {/* <div className='snap-y snap-mandatory'> */}
+      <div>
         <ScrollSectionPane reff={projectsRef} children={<LandingIntro scrollRefs={scrollRefs} />} />
         <ScrollSectionPane reff={aboutRef} children={<About />} />
         <ScrollSectionPane reff={projectsRef} children={<Projects setDisplayModal={setDisplayModal} setModalContent={setModalContent}/>} />
@@ -59,7 +60,8 @@ function App() {
 
 function ScrollSectionPane({ children,reff } : {children: any,reff?: any}) {
   return (
-    <div className='snap-start' ref={reff}>
+    // <div className='snap-start' ref={reff}>
+    <div ref={reff}>
       {children}
     </div>
   )

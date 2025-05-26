@@ -9,7 +9,7 @@ export default function Projects({ setDisplayModal, setModalContent }: { setDisp
 
 
     return (
-        <div className='snap-end w-full bg-red-50 py-16'>
+        <div className='w-full bg-red-50 py-16'>
             <div className="flex flex-col items-center justify-center w-full gap-3">
 
                 <h1 className="text-4xl font-bold">PROJECTS</h1>
